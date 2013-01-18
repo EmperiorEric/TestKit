@@ -13,6 +13,8 @@
 - (void)widgetSayHello
 {
     NSLog(@"TestKitA: AWidget Hello");
+    
+    // Comment
 }
 
 @end
