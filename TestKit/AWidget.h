@@ -1,13 +1,15 @@
 //
-//  TestKit.m
+//  AWidget.h
 //  TestKit
 //
 //  Created by rpoolos1951 on 1/18/13.
 //  Copyright (c) 2013 Super Duper Publications. All rights reserved.
 //
 
-#import "TestKit.h"
+#import <Foundation/Foundation.h>
 
-@implementation TestKit
+@interface AWidget : NSObject
+
+- (void)widgetSayHello;
 
 @end

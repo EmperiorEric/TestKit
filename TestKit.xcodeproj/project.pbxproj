@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		1458835116A992BE00B01E5C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1458835016A992BE00B01E5C /* Foundation.framework */; };
 		1458835616A992BE00B01E5C /* TestKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1458835516A992BE00B01E5C /* TestKit.h */; };
-		1458835816A992BF00B01E5C /* TestKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 1458835716A992BF00B01E5C /* TestKit.m */; };
+		145883F816A993E200B01E5C /* AWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = 145883F716A993E200B01E5C /* AWidget.m */; };
+		145883FA16A9943300B01E5C /* TestKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 1458835516A992BE00B01E5C /* TestKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		145883FB16A9943700B01E5C /* AWidget.h in Headers */ = {isa = PBXBuildFile; fileRef = 145883F616A993E200B01E5C /* AWidget.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,7 +32,8 @@
 		1458835016A992BE00B01E5C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1458835416A992BE00B01E5C /* TestKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestKit-Prefix.pch"; sourceTree = "<group>"; };
 		1458835516A992BE00B01E5C /* TestKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestKit.h; sourceTree = "<group>"; };
-		1458835716A992BF00B01E5C /* TestKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestKit.m; sourceTree = "<group>"; };
+		145883F616A993E200B01E5C /* AWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWidget.h; sourceTree = "<group>"; };
+		145883F716A993E200B01E5C /* AWidget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWidget.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +77,8 @@
 			isa = PBXGroup;
 			children = (
 				1458835516A992BE00B01E5C /* TestKit.h */,
-				1458835716A992BF00B01E5C /* TestKit.m */,
+				145883F616A993E200B01E5C /* AWidget.h */,
+				145883F716A993E200B01E5C /* AWidget.m */,
 				1458835316A992BE00B01E5C /* Supporting Files */,
 			);
 			path = TestKit;
@@ -90,6 +94,18 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		145883F916A9942E00B01E5C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				145883FA16A9943300B01E5C /* TestKit.h in Headers */,
+				145883FB16A9943700B01E5C /* AWidget.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		1458834C16A992BE00B01E5C /* TestKit */ = {
 			isa = PBXNativeTarget;
@@ -98,6 +114,7 @@
 				1458834916A992BE00B01E5C /* Sources */,
 				1458834A16A992BE00B01E5C /* Frameworks */,
 				1458834B16A992BE00B01E5C /* CopyFiles */,
+				145883F916A9942E00B01E5C /* Headers */,
 			);
 			buildRules = (
 			);
@@ -139,7 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1458835816A992BF00B01E5C /* TestKit.m in Sources */,
+				145883F816A993E200B01E5C /* AWidget.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,24 +213,30 @@
 		1458835C16A992BF00B01E5C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				DSTROOT = /tmp/TestKit.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TestKit/TestKit-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(BUILT_PRODUCTS_DIR)";
 				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
 			};
 			name = Debug;
 		};
 		1458835D16A992BF00B01E5C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				DSTROOT = /tmp/TestKit.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TestKit/TestKit-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(BUILT_PRODUCTS_DIR)";
 				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
 			};
 			name = Release;
 		};
@@ -236,6 +259,7 @@
 				1458835D16A992BF00B01E5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
